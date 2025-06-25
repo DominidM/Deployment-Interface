@@ -1,0 +1,7 @@
+node_modules
+.bun
+tests
+*.log
+*.test.js
+*.md
+*.env
