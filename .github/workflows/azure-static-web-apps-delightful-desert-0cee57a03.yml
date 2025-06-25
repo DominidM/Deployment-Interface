@@ -34,7 +34,10 @@ jobs:
           du -sh dist
           echo "Archivos más pesados dentro de dist:"
           du -ah dist | sort -hr | head -n 20
-
+      - name: Verificar tamaño del build
+        run: |
+          du -sh dist
+          find dist -type f -exec du -h {} + | sort -rh | head -n 20
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
