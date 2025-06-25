@@ -25,6 +25,16 @@ jobs:
           export PATH="$HOME/.bun/bin:$PATH"
           bun install
           bun run build
+      - name: Verificar tamaño del build
+        run: |
+          echo "Directorio actual:"
+          pwd
+          ls -lah
+          echo "Tamaño total de la carpeta dist:"
+          du -sh dist
+          echo "Archivos más pesados dentro de dist:"
+          du -ah dist | sort -hr | head -n 20
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
