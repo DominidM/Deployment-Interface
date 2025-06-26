@@ -27,7 +27,7 @@ const App: React.FC = () => {
         <Route path="/instalacion" element={<InstalacionPage />} />
         <Route path="/mantenimiento" element={<MantenimientoPage />} />
       </Route>
-      <Route path="/reset-password" element={<ResetPasswordPage />} /> {/* <-- Nueva ruta */}
+      <Route path="/reset-password" element={<ResetPasswordPage />} /> 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
